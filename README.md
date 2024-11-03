@@ -12,6 +12,5 @@ CDN (Content Delivery Network) adalah jaringan server yang tersebar di berbagai 
 ### Menggunakan CDN dalam Proyek
 #### Mengintegrasikan CDN ke dalam Proyek
 Untuk menggunakan Bootstrap dari CDN, Anda bisa menambahkan kode berikut di dalam tag `<head>`:
-```html
+```bash
 <script src="https://cdn.jsdelivr.net/gh/ruangdev/cdn/js/inputmask/jquery.inputmask.min.js" integrity="sha384-9Fu4odnMwVrefPIJA7dvRxpA2/eb0Ti9D6ZgDSytHqzVd7JYLYqGeLnqBB2QCTEv" crossorigin="anonymous"></script>
-```html
