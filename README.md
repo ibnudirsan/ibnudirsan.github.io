@@ -1,126 +1,16 @@
-# Laravel Sanctum API Handler
+# Dokumentasi Penggunaan CDN
+## Proyek-Proyek oleh Ruang Dev Indonesia
 
-[![Latest Version on Packagist](https://img.shields.io/github/v/release/ibnudirsan/Lara-Handler-Sanctum?style=plastic)](https://packagist.org/packages/ibnudirsan/handle-http-api)
-![Size Code on Packagist](https://img.shields.io/github/languages/code-size/ibnudirsan/Lara-Handler-Sanctum?style=plastic)
-![issues on Packagist](https://img.shields.io/github/issues/ibnudirsan/Lara-Handler-Sanctum?style=plastic)
-![follower on Packagist](https://img.shields.io/github/followers/ibnudirsan?style=plastic)
-![discussions on Packagist](https://img.shields.io/github/discussions/ibnudirsan/Lara-Handler-Sanctum?style=plastic)
-![commit on Packagist](https://img.shields.io/github/commit-activity/m/ibnudirsan/Lara-Handler-Sanctum?style=plastic)
-![license on Packagist](https://img.shields.io/github/license/ibnudirsan/Lara-Handler-Sanctum?style=plastic)
+### Pendahuluan
+CDN (Content Delivery Network) adalah jaringan server yang tersebar di berbagai lokasi geografi, yang bertujuan untuk menyampaikan konten kepada pengguna dengan lebih cepat dan efisien. Dengan menggunakan CDN, proyek-proyek yang dikembangkan oleh Ruang Dev Indonesia dapat memanfaatkan kecepatan akses yang lebih tinggi dan mengurangi beban server utama.
 
-## Cara menggunakannya :
-install Package ``` composer require ibnudirsan/lara-handler-sanctum ```
+### Manfaat Menggunakan CDN
+- **Kecepatan:** Menyediakan konten lebih cepat dengan lokasi server yang dekat dengan pengguna.
+- **Keandalan:** Meningkatkan ketersediaan konten dan mengurangi downtime.
+- **Skalabilitas:** Mampu menangani lonjakan lalu lintas dengan mudah.
 
-Ganti baris kode program ini :
-
-```php
-// bootstrap/app.php
-
-<?php
-
-$app->singleton(
-    Illuminate\Contracts\Debug\ExceptionHandler::class,
-    App\Exceptions\Handler::class,
-);
-
-```
-
-Menjadi seperti ini :
-```php
-// bootstrap/app.php
-
-<?php
-
-$app->singleton(
-    Illuminate\Contracts\Debug\ExceptionHandler::class,
-    Ibnudirsan\LaraHandlerSanctum\Exceptions\HandlerSanctumException::class,
-    App\Exceptions\Handler::class,
-);
-
-```
-
-## Response Json
-
-
-```php
-
-    /**
-     * Method yang dapat digunakan
-     */
-    return ResponseJson::cretae($result);
-    return ResponseJson::read($result);
-    return ResponseJson::show($result);
-    return ResponseJson::update();
-    return ResponseJson::delete();
-
-```
-
-#### Usage Example :
-
-```php
-// App/Http/Controllers/usersController.php
-
-<?php
-
-namespace App\Http\Controllers;
-
-use App\Models\User;
-use Illuminate\Http\Request;
-use Ibnudirsan\LaraHandlerSanctum\Halper\ResponseJson;
-
-class usersController extends Controller
-{
-    public function getUser($id)
-    {
-        $result = User::where('id',$id)->first();
-            return ResponseJson::read($result);
-    }
-}
-
-```
-
-```
-// Contoh Return Json
-
-{
-    "app": {
-        "info": {
-            "error": false,
-            "Status": "Read Data",
-            "httpcode": 200,
-            "Message": "Successfully Read Data"
-        },
-        "result": {
-            "data": {
-                "name": "ibnudirsan",
-                "email": "ibnudirsan@gmail.com"
-            }
-        }
-    }
-}
-```
-
-## Publish
-Publish package configuration ```php php artisan vendor:publish --tag=handler-sanctum-config ```
-
-Secara otomatis akan membuat file ``` handler.php ```
-
-```php
-// config/handler.php
-
-<?php
-
-return [
-    
-    'hidden' => [
-        'email_verified_at',
-        'created_at',
-        'updated_at',
-    ]
-];
-
-```
-
-Note :
-
-- Di file ini bisa menambahkan atau menguragi filed yang di hidden.
+### Menggunakan CDN dalam Proyek
+#### Mengintegrasikan CDN ke dalam Proyek
+Untuk menggunakan Bootstrap dari CDN, Anda bisa menambahkan kode berikut di dalam tag `<head>`:
+```html
+<script src="https://cdn.jsdelivr.net/gh/ruangdev/cdn/js/inputmask/jquery.inputmask.min.js" integrity="sha384-9Fu4odnMwVrefPIJA7dvRxpA2/eb0Ti9D6ZgDSytHqzVd7JYLYqGeLnqBB2QCTEv" crossorigin="anonymous"></script>
